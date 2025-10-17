@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-top">
+                    <img src="images/logo.png" alt="LittleKitten" class="logo-image">
+                    <h1 class="logo-text">Lerochka</h1>
+                </div>
+            </div>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item nav-item--active">
+                    <a class="nav-link" href="index.html">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/projects.html">Проекты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/diary.html">Дневник</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <main>
+            <section class="skills-section">
+                <section class="hero">
+                    <div class="hero-image">
+                        <img class="profile-photo" src="images/mypic.jpg" alt="Фото студента">
+                    </div>
+                    <div class="hero-content">
+                        <h1 class="hero-title">Привет!</h1>
+                        <h2 class="hero-subtitle">Я студент группы ЭФБО-02-24</h2>
+                        <p class="hero-text">Увлекаюсь веб-разработкой и созданием интересных проектов. Люблю изучать новые технологии и применять их на практике.</p>
+                        <a href="assets/resume.pdf" class="btn">Скачать резюме</a>
+                    </div>               
+            </section>
+            
+            <section class="skills-section">
+                <h2 class="section-title">Мои навыки</h2>
+                <div class="skills-container">
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>HTML/CSS</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress html-progress"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>JavaScript</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress js-progress"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Bootstrap</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress bootstrap-progress"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>React</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress react-progress"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="skills-section">
+                <div class="projects-preview">
+                    <h3 style="grid-column: 1 / -1; margin-bottom: 15px;">Лучшие проекты</h3>
+                    <div class="project-card">П1</div>
+                    <div class="project-card">П2</div>
+                    <div class="project-card">П3</div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© 2025 Контакты</p>
+        </footer>
+    </div>
+</body>
+</html>

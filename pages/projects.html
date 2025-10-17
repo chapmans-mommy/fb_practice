@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-top">
+                    <img src="../images/logo.png" alt="LittleKitten" class="logo-image">
+                    <h1 class="logo-text">Lerochka</h1>
+                </div>
+            </div>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav-item nav-item--active">
+                    <a class="nav-link" href="projects.html">Проекты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="diary.html">Дневник</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <main>
+            <h1 class="page-title">Мои проекты</h1>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="html">HTML</button>
+                <button class="filter-btn" data-filter="js">JS</button>
+                <button class="filter-btn" data-filter="react">React</button>
+            </div>
+            
+            <div class="projects-grid">
+
+                <div class="project-card" data-category="html" onclick="openModal('modal1')">
+                    <div class="project-image">💻</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Личный сайт</h3>
+                        <span class="project-tech">HTML, CSS</span>
+                        <p class="project-description">Персональный веб-сайт с адаптивным дизайном и современным интерфейсом.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="js" onclick="openModal('modal2')">
+                    <div class="project-image">✅</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Todo-приложение</h3>
+                        <span class="project-tech">JavaScript</span>
+                        <p class="project-description">Интерактивное приложение для управления задачами с локальным хранилищем.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="react" onclick="openModal('modal3')">
+                    <div class="project-image">🛒</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Интернет-магазин</h3>
+                        <span class="project-tech">React</span>
+                        <p class="project-description">Полнофункциональный интернет-магазин с корзиной и системой заказов.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="html" onclick="openModal('modal4')">
+                    <div class="project-image">🎨</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Портфолио</h3>
+                        <span class="project-tech">Bootstrap</span>
+                        <p class="project-description">Адаптивное портфолио с использованием фреймворка Bootstrap 5.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>© 2025 Контакты</p>
+        </footer>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Личный сайт</h2>
+                <button class="close-btn" onclick="closeModal('modal1')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">💻</div>
+                <p class="modal-description">
+                    Полнофункциональный личный веб-сайт с адаптивным дизайном, созданный с использованием чистого HTML и CSS. 
+                    Сайт включает в себя главную страницу, портфолио проектов, блог и контактную форму. 
+                </p>
+                <div class="modal-links">
+                    <a href="#" class="modal-link">Живая версия</a>
+                    <a href="#" class="modal-link">Исходный код</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Todo-приложение</h2>
+                <button class="close-btn" onclick="closeModal('modal2')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">✅</div>
+                <p class="modal-description">
+                    Интерактивное приложение для управления задачами, разработанное на чистом JavaScript. 
+                    Функциональность включает добавление, редактирование, удаление и отметку выполненных задач. 
+                    Данные сохраняются в локальном хранилище браузера. 
+                </p>
+                <div class="modal-links">
+                    <a href="#" class="modal-link">Живая версия</a>
+                    <a href="#" class="modal-link">Исходный код</a>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Интернет-магазин</h2>
+                <button class="close-btn" onclick="closeModal('modal3')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">🛒</div>
+                <p class="modal-description">
+                    Полнофункциональный интернет-магазин на React с использованием современных хуков и контекста для управления состоянием. 
+                    Включает каталог товаров, корзину покупок, систему фильтрации и поиска, а также оформление заказов. 
+                </p>
+                <div class="modal-links">
+                    <a href="#" class="modal-link">Живая версия</a>
+                    <a href="#" class="modal-link">Исходный код</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Портфолио</h2>
+                <button class="close-btn" onclick="closeModal('modal4')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">🎨</div>
+                <p class="modal-description">
+                    Адаптивное портфолио, созданное с использованием Bootstrap 5. Сайт полностью responsive и корректно отображается 
+                    на всех типах устройств. Включает галерею проектов, интерактивные элементы и современные UI-компоненты. 
+                </p>
+                <div class="modal-links">
+                    <a href="#" class="modal-link">Живая версия</a>
+                    <a href="#" class="modal-link">Исходный код</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/projects-sctipt.js"></script>
+</body>
+</html>
+
