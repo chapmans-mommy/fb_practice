@@ -18,6 +18,31 @@ document.addEventListener('click', function(event) {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('project');
+    
+    if (projectId) {
+        // Даем время на загрузку страницы
+        setTimeout(() => {
+            const projectElement = document.querySelector(`[data-project="${projectId}"]`);
+            if (projectElement) {
+                // Прокручиваем к проекту
+                projectElement.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                
+                // Добавляем подсветку
+                projectElement.style.boxShadow = '0 0 0 3px #4a6fa5';
+                setTimeout(() => {
+                    projectElement.style.boxShadow = '';
+                }, 3000);
+            }
+        }, 500);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 

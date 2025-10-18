@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="light">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио</title>
+    <title>Проекты - Портфолио</title>
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
@@ -45,8 +45,8 @@
             </div>
             
             <div class="projects-grid">
-
-                <div class="project-card" data-category="html" onclick="openModal('modal1')">
+                <!-- Проект 1 -->
+                <div class="project-card" data-category="html" data-project="personal-site" onclick="openModal('modal1')">
                     <div class="project-image">💻</div>
                     <div class="project-content">
                         <h3 class="project-title">Личный сайт</h3>
@@ -54,8 +54,9 @@
                         <p class="project-description">Персональный веб-сайт с адаптивным дизайном и современным интерфейсом.</p>
                     </div>
                 </div>
-
-                <div class="project-card" data-category="js" onclick="openModal('modal2')">
+                
+                <!-- Проект 2 -->
+                <div class="project-card" data-category="js" data-project="todo-app" onclick="openModal('modal2')">
                     <div class="project-image">✅</div>
                     <div class="project-content">
                         <h3 class="project-title">Todo-приложение</h3>
@@ -63,8 +64,9 @@
                         <p class="project-description">Интерактивное приложение для управления задачами с локальным хранилищем.</p>
                     </div>
                 </div>
-
-                <div class="project-card" data-category="react" onclick="openModal('modal3')">
+                
+                <!-- Проект 3 -->
+                <div class="project-card" data-category="react" data-project="react-shop" onclick="openModal('modal3')">
                     <div class="project-image">🛒</div>
                     <div class="project-content">
                         <h3 class="project-title">Интернет-магазин</h3>
@@ -72,8 +74,9 @@
                         <p class="project-description">Полнофункциональный интернет-магазин с корзиной и системой заказов.</p>
                     </div>
                 </div>
-
-                <div class="project-card" data-category="html" onclick="openModal('modal4')">
+                
+                <!-- Проект 4 -->
+                <div class="project-card" data-category="html" data-project="portfolio" onclick="openModal('modal4')">
                     <div class="project-image">🎨</div>
                     <div class="project-content">
                         <h3 class="project-title">Портфолио</h3>
@@ -89,6 +92,7 @@
         </footer>
     </div>
 
+    <!-- Модальные окна -->
     <div id="modal1" class="modal">
         <div class="modal-content">
             <div class="modal-header">

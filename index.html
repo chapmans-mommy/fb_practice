@@ -46,6 +46,7 @@
                         <p class="hero-text">Увлекаюсь веб-разработкой и созданием интересных проектов. Люблю изучать новые технологии и применять их на практике.</p>
                         <a href="assets/resume.pdf" class="btn">Скачать резюме</a>
                     </div>               
+                </section>
             </section>
             
             <section class="skills-section">
@@ -98,10 +99,22 @@
 
             <section class="skills-section">
                 <div class="projects-preview">
-                    <h3 style="grid-column: 1 / -1; margin-bottom: 15px;">Лучшие проекты</h3>
-                    <div class="project-card">П1</div>
-                    <div class="project-card">П2</div>
-                    <div class="project-card">П3</div>
+                    <h3 class="preview-title">Лучшие проекты</h3>
+                    <div class="project-card-main" onclick="openProject('personal-site')">
+                        <div class="project-icon">💻</div>
+                        <h4 class="project-name">Личный сайт</h4>
+                        <p class="project-tech">HTML, CSS, JavaScript</p>
+                    </div>
+                    <div class="project-card-main" onclick="openProject('todo-app')">
+                        <div class="project-icon">✅</div>
+                        <h4 class="project-name">Todo-приложение</h4>
+                        <p class="project-tech">JavaScript, LocalStorage</p>
+                    </div>
+                    <div class="project-card-main" onclick="openProject('portfolio')">
+                        <div class="project-icon">🎨</div>
+                        <h4 class="project-name">Портфолио</h4>
+                        <p class="project-tech">Bootstrap, Responsive</p>
+                    </div>
                 </div>
             </section>
         </main>
@@ -110,5 +123,6 @@
             <p>© 2025 Контакты</p>
         </footer>
     </div>
+    <script src="/scripts/index.js"></script>
 </body>
 </html>
