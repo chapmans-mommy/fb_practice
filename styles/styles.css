@@ -75,18 +75,30 @@ body {
 }
 
 /* Navigation */
-.nav {
-    margin: 20px 0;
-    padding-bottom: 20px;
-    display: flex;
-    justify-content: center; 
-    border-bottom: 1px solid #e0e0e0;
+.nav{
+    position: sticky;
+    letter-spacing: 1px;
+    top: 0;
+    padding-block-start: calc(.75rem + env(safe-area-inset-top));
+    padding-block-end: .75rem;
+    padding-inline-start: calc(1rem + env(safe-area-inset-left));
+    padding-inline-end: calc(1rem + env(safe-area-inset-right));
+    background: #ffffff;
+    color: #333;;
+    z-index: 100;
+    isolation: isolate;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    width: 100%; 
 }
 
 .nav-list {
     display: flex;
     list-style: none;
     gap: 35px; 
+    justify-content: center; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .nav-link {
@@ -479,26 +491,59 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* .profile-photo {  
+    inline-size: 200px;
+    block-size: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+} */
+
 /* Projects Grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.5rem;
     margin: 40px 0;
 }
 
-.project-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
+/* Прогрессивное улучшение: только если CQ поддерживаются */
+@supports (container-type: inline-size) {
+    .projects-area {
+        container-type: inline-size;
+        container-name: projects;
+    }
+
+    /* Когда КОНТЕЙНЕР шире 640px — 2 колонки */
+    @container projects (min-width: 640px) {
+        .projects-grid { 
+            grid-template-columns: repeat(2, 1fr); 
+        }
+    }
+
+    /* Когда шире 960px — 3 колонки */
+    @container projects (min-width: 960px) {
+        .projects-grid { 
+            grid-template-columns: repeat(3, 1fr); 
+        }
+    }
 }
 
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+.project-card {
+    min-width: 0;
+    background: #fff;
+    border-radius: .75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.project-card:hover { 
+    transform: translateY(-4px); 
+}
+
+.project-card_title,
+.project-card_description { 
+    overflow-wrap: anywhere; 
 }
 
 .project-image {
@@ -646,10 +691,10 @@ body {
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 1.1rem + 2vw, 2rem); 
     margin-bottom: 30px;
     color: #4a6fa5;
-    text-align: center;
+    text-align: center;   
 }
 
 .skills-container {
@@ -1010,6 +1055,32 @@ body {
     background: #3a5a85;
 }
 
+.skip-link{
+    position: absolute;
+    inset-inline-start: 1rem;
+    inset-block-start: -100%;
+    z-index: 10000;
+    padding: .5rem .75rem;
+    background: #111;
+    color: #fff;
+    border-radius: .5rem;
+    text-decoration: none;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible { 
+    inset-block-start: 1rem; 
+}
+
+:focus-visible { 
+    outline: 3px solid #2563eb; 
+    outline-offset: 2px; 
+}
+
+a, button, input, textarea { 
+    outline-offset: 2px; 
+}
+
 /* Адаптивность */
 /* Мобильные устройства (до 768px) */
 @media (max-width: 768px) {
@@ -1071,7 +1142,7 @@ body {
 
     /* Заголовки */
     .page-title {
-        font-size: 1.8rem;
+        font-size: clamp(1.8rem, 1.5rem + 1.5vw, 2.5rem); 
         margin: 25px 0;
         line-height: 1.3;
         padding: 0 10px;
@@ -1397,5 +1468,26 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+}
+
+@media (pointer: coarse){
+    a, button, .nav_link { 
+        min-height: 44px; 
+        padding: .75rem 1rem; 
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { 
+        animation: none !important; 
+        transition: none !important; 
+    }
+}
+
+/* Повышенный контраст */
+@media (prefers-contrast: more) {
+    .button, .filter-btn, .nav-link { 
+        box-shadow: inset 0 0 0 2px #fff; 
     }
 }

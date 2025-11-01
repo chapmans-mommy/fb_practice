@@ -2,11 +2,12 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Проекты - Портфолио</title>
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
     <div class="container">
         <header class="header">
             <div class="logo">
@@ -34,7 +35,7 @@
             </ul>
         </nav>
         
-        <main>
+        <main id="main">
             <h1 class="page-title">Мои проекты</h1>
             
             <div class="filters">
@@ -44,47 +45,49 @@
                 <button class="filter-btn" data-filter="react">React</button>
             </div>
             
-            <div class="projects-grid">
-                <!-- Проект 1 -->
-                <div class="project-card" data-category="html" data-project="personal-site" onclick="openModal('modal1')">
-                    <div class="project-image">💻</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Личный сайт</h3>
-                        <span class="project-tech">HTML, CSS</span>
-                        <p class="project-description">Персональный веб-сайт с адаптивным дизайном и современным интерфейсом.</p>
+            <section class="projects-area">
+                <div class="projects-grid">
+                    <!-- Проект 1 -->
+                    <div class="project-card" data-category="html" data-project="personal-site" onclick="openModal('modal1')">
+                        <div class="project-image">💻</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Личный сайт</h3>
+                            <span class="project-tech">HTML, CSS</span>
+                            <p class="project-description">Персональный веб-сайт с адаптивным дизайном и современным интерфейсом.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Проект 2 -->
+                    <div class="project-card" data-category="js" data-project="todo-app" onclick="openModal('modal2')">
+                        <div class="project-image">✅</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Todo-приложение</h3>
+                            <span class="project-tech">JavaScript</span>
+                            <p class="project-description">Интерактивное приложение для управления задачами с локальным хранилищем.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Проект 3 -->
+                    <div class="project-card" data-category="react" data-project="react-shop" onclick="openModal('modal3')">
+                        <div class="project-image">🛒</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Интернет-магазин</h3>
+                            <span class="project-tech">React</span>
+                            <p class="project-description">Полнофункциональный интернет-магазин с корзиной и системой заказов.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Проект 4 -->
+                    <div class="project-card" data-category="html" data-project="portfolio" onclick="openModal('modal4')">
+                        <div class="project-image">🎨</div>
+                        <div class="project-content">
+                            <h3 class="project-title">Портфолио</h3>
+                            <span class="project-tech">Bootstrap</span>
+                            <p class="project-description">Адаптивное портфолио с использованием фреймворка Bootstrap 5.</p>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Проект 2 -->
-                <div class="project-card" data-category="js" data-project="todo-app" onclick="openModal('modal2')">
-                    <div class="project-image">✅</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Todo-приложение</h3>
-                        <span class="project-tech">JavaScript</span>
-                        <p class="project-description">Интерактивное приложение для управления задачами с локальным хранилищем.</p>
-                    </div>
-                </div>
-                
-                <!-- Проект 3 -->
-                <div class="project-card" data-category="react" data-project="react-shop" onclick="openModal('modal3')">
-                    <div class="project-image">🛒</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Интернет-магазин</h3>
-                        <span class="project-tech">React</span>
-                        <p class="project-description">Полнофункциональный интернет-магазин с корзиной и системой заказов.</p>
-                    </div>
-                </div>
-                
-                <!-- Проект 4 -->
-                <div class="project-card" data-category="html" data-project="portfolio" onclick="openModal('modal4')">
-                    <div class="project-image">🎨</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Портфолио</h3>
-                        <span class="project-tech">Bootstrap</span>
-                        <p class="project-description">Адаптивное портфолио с использованием фреймворка Bootstrap 5.</p>
-                    </div>
-                </div>
-            </div>
+            </section>
         </main>
         
         <footer class="footer">

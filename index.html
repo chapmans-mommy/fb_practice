@@ -2,11 +2,12 @@
 <html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Портфолио</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
     <div class="container">
         <header class="header">
             <div class="logo">
@@ -34,11 +35,21 @@
             </ul>
         </nav>
         
-        <main>
+        <main id="main">
             <section class="skills-section">
                 <section class="hero">
                     <div class="hero-image">
-                        <img class="profile-photo" src="images/mypic.jpg" alt="Фото студента">
+                        <figure class="hero_image">
+                            <picture>
+                                <img class="profile-photo" 
+                                src="images/mypic-200.jpg" 
+                                srcset="images/mypic-150.jpg 150w, images/mypic-200.jpg 200w, images/mypic-300.jpg 300w"
+                                sizes="(max-width: 768px) 150px, 200px"
+                                width="200" height="200"
+                                alt="Фото студента"
+                                fetchpriority="high">
+                            </picture>
+                        </figure>
                     </div>
                     <div class="hero-content">
                         <h1 class="hero-title">Привет!</h1>
