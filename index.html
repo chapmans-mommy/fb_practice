@@ -12,9 +12,14 @@
         <header class="header">
             <div class="logo">
                 <div class="logo-top">
-                    <img src="images/logo.png" alt="LittleKitten" class="logo-image">
+                    <img src="../images/logo.png" alt="LittleKitten" class="logo-image">
                     <h1 class="logo-text">Lerochka</h1>
                 </div>
+            </div>
+            <div class="theme-switcher">
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <span class="theme-icon">🔆</span>
+                </button>
             </div>
         </header>
         
@@ -41,13 +46,31 @@
                     <div class="hero-image">
                         <figure class="hero_image">
                             <picture>
+                                <source srcset="images/mypic-150.webp 150w,
+                                    images/mypic-300.webp 300w,
+                                    images/mypic-450.webp 450w,
+                                    images/mypic-600.webp 600w"
+                                    type="image/webp"
+                                    sizes="(max-width: 768px) 150px, 
+                                    (max-width: 1024px) 300px, 
+                                    450px">
+            
+                                <source srcset="images/mypic-150.jpg 150w,
+                                        images/mypic-300.jpg 300w,
+                                        images/mypic-450.jpg 450w,
+                                        images/mypic-600.jpg 600w"
+                                        type="image/jpeg"
+                                        sizes="(max-width: 768px) 150px, 
+                                        (max-width: 1024px) 300px, 
+                                        450px">
+
                                 <img class="profile-photo" 
-                                src="images/mypic-200.jpg" 
-                                srcset="images/mypic-150.jpg 150w, images/mypic-200.jpg 200w, images/mypic-300.jpg 300w"
-                                sizes="(max-width: 768px) 150px, 200px"
-                                width="200" height="200"
-                                alt="Фото студента"
-                                fetchpriority="high">
+                                     src="images/mypic-300.jpg"
+                                     srcset="images/mypic-150.jpg 150w, images/mypic-300.jpg 300w, images/mypic-450.jpg 450w, images/mypic-600.jpg 600w"
+                                     sizes="(max-width: 768px) 150px, (max-width: 1024px) 300px, 450px"
+                                     width="450" height="450"
+                                     alt="Фото студента"
+                                     loading="eager">
                             </picture>
                         </figure>
                     </div>
@@ -66,8 +89,8 @@
                     <div class="skills-list">
                         <div class="skill-item">
                             <div class="skill-name">
-                                <span>HTML/CSS</span>
-                                <span>90%</span>
+                                <span class="form-label">HTML/CSS</span>
+                                <span class="form-label">90%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress html-progress"></div>
@@ -76,8 +99,8 @@
                         
                         <div class="skill-item">
                             <div class="skill-name">
-                                <span>JavaScript</span>
-                                <span>80%</span>
+                                <span class="form-label">JavaScript</span>
+                                <span class="form-label">80%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress js-progress"></div>
@@ -86,8 +109,8 @@
                         
                         <div class="skill-item">
                             <div class="skill-name">
-                                <span>Bootstrap</span>
-                                <span>85%</span>
+                                <span class="form-label">Bootstrap</span>
+                                <span class="form-label">85%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress bootstrap-progress"></div>
@@ -96,8 +119,8 @@
                         
                         <div class="skill-item">
                             <div class="skill-name">
-                                <span>React</span>
-                                <span>60%</span>
+                                <span class="form-label">React</span>
+                                <span class="form-label">60%</span>
                             </div>
                             <div class="skill-bar">
                                 <div class="skill-progress react-progress"></div>
@@ -111,18 +134,90 @@
             <section class="skills-section">
                 <div class="projects-preview">
                     <h3 class="preview-title">Лучшие проекты</h3>
+
                     <div class="project-card-main" onclick="openProject('personal-site')">
-                        <div class="project-icon">💻</div>
+                        <picture>
+                            <source srcset="images/project1-150.webp 150w,
+                                           images/project1-300.webp 300w,
+                                           images/project1-600.webp 600w"
+                                    type="image/webp"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <source srcset="images/project1-150.jpg 150w,
+                                           images/project1-300.jpg 300w,
+                                           images/project1-600.jpg 600w"
+                                    type="image/jpeg"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <img class="project-preview-image" 
+                                 src="images/project1-300.jpg"
+                                 width="300" 
+                                 height="200"
+                                 alt="Главная страница личного сайта"
+                                 loading="lazy">
+                        </picture>
                         <h4 class="project-name">Личный сайт</h4>
                         <p class="project-tech">HTML, CSS, JavaScript</p>
                     </div>
+
                     <div class="project-card-main" onclick="openProject('todo-app')">
-                        <div class="project-icon">✅</div>
+                        <picture>
+                            <source srcset="images/project2-150.webp 150w,
+                                           images/project2-300.webp 300w,
+                                           images/project2-600.webp 600w"
+                                    type="image/webp"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <source srcset="images/project2-150.jpg 150w,
+                                           images/project2-300.jpg 300w,
+                                           images/project2-600.jpg 600w"
+                                    type="image/jpeg"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <img class="project-preview-image" 
+                                 src="images/project2-300.jpg"
+                                 width="300" 
+                                 height="200"
+                                 alt="Главная страница личного сайта"
+                                 loading="lazy">
+                        </picture>
                         <h4 class="project-name">Todo-приложение</h4>
                         <p class="project-tech">JavaScript, LocalStorage</p>
                     </div>
+
                     <div class="project-card-main" onclick="openProject('portfolio')">
-                        <div class="project-icon">🎨</div>
+                        <picture>
+                            <source srcset="images/project3-150.webp 150w,
+                                           images/project3-300.webp 300w,
+                                           images/project3-600.webp 600w"
+                                    type="image/webp"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <source srcset="images/project3-150.jpg 150w,
+                                           images/project3-300.jpg 300w,
+                                           images/project3-600.jpg 600w"
+                                    type="image/jpeg"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <img class="project-preview-image" 
+                                 src="images/project3-300.jpg"
+                                 width="300" 
+                                 height="200"
+                                 alt="Главная страница личного сайта"
+                                 loading="lazy">
+                        </picture>
                         <h4 class="project-name">Портфолио</h4>
                         <p class="project-tech">Bootstrap, Responsive</p>
                     </div>

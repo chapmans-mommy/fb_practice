@@ -16,6 +16,11 @@
                     <h1 class="logo-text">Lerochka</h1>
                 </div>
             </div>
+            <div class="theme-switcher">
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <span class="theme-icon">🔆</span>
+                </button>
+            </div>
         </header>
         
         <nav class="nav">
@@ -49,7 +54,30 @@
                 <div class="projects-grid">
                     <!-- Проект 1 -->
                     <div class="project-card" data-category="html" data-project="personal-site" onclick="openModal('modal1')">
-                        <div class="project-image">💻</div>
+                        <picture>
+                            <source srcset="../images/project1-150.webp 150w,
+                                           ../images/project1-300.webp 300w,
+                                           ../images/project1-600.webp 600w"
+                                    type="image/webp"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <source srcset="../images/project1-150.jpg 150w,
+                                           ../images/project1-300.jpg 300w,
+                                           ../images/project1-600.jpg 600w"
+                                    type="image/jpeg"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <img class="project-preview-image" 
+                                 src="../images/project1-300.jpg"
+                                 width="300" 
+                                 height="200"
+                                 alt="Главная страница личного сайта"
+                                 loading="lazy">
+                        </picture>
                         <div class="project-content">
                             <h3 class="project-title">Личный сайт</h3>
                             <span class="project-tech">HTML, CSS</span>
@@ -59,7 +87,30 @@
                     
                     <!-- Проект 2 -->
                     <div class="project-card" data-category="js" data-project="todo-app" onclick="openModal('modal2')">
-                        <div class="project-image">✅</div>
+                        <picture>
+                            <source srcset="../images/project2-150.webp 150w,
+                                           ../images/project2-300.webp 300w,
+                                           ../images/project2-600.webp 600w"
+                                    type="image/webp"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <source srcset="../images/project2-150.jpg 150w,
+                                           ../images/project2-300.jpg 300w,
+                                           ../images/project2-600.jpg 600w"
+                                    type="image/jpeg"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <img class="project-preview-image" 
+                                 src="../images/project2-300.jpg"
+                                 width="300" 
+                                 height="200"
+                                 alt="Главная страница личного сайта"
+                                 loading="lazy">
+                        </picture>
                         <div class="project-content">
                             <h3 class="project-title">Todo-приложение</h3>
                             <span class="project-tech">JavaScript</span>
@@ -69,7 +120,30 @@
                     
                     <!-- Проект 3 -->
                     <div class="project-card" data-category="react" data-project="react-shop" onclick="openModal('modal3')">
-                        <div class="project-image">🛒</div>
+                        <picture>
+                            <source srcset="../images/project4-150.webp 150w,
+                                           ../images/project4-300.webp 300w,
+                                           ../images/project4-600.webp 600w"
+                                    type="image/webp"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <source srcset="../images/project4-150.jpg 150w,
+                                           ../images/project4-300.jpg 300w,
+                                           ../images/project4-600.jpg 600w"
+                                    type="image/jpeg"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <img class="project-preview-image" 
+                                 src="../images/project4-300.jpg"
+                                 width="300" 
+                                 height="200"
+                                 alt="Главная страница личного сайта"
+                                 loading="lazy">
+                        </picture>
                         <div class="project-content">
                             <h3 class="project-title">Интернет-магазин</h3>
                             <span class="project-tech">React</span>
@@ -79,7 +153,30 @@
                     
                     <!-- Проект 4 -->
                     <div class="project-card" data-category="html" data-project="portfolio" onclick="openModal('modal4')">
-                        <div class="project-image">🎨</div>
+                        <picture>
+                            <source srcset="../images/project3-150.webp 150w,
+                                           ../images/project3-300.webp 300w,
+                                           ../images/project3-600.webp 600w"
+                                    type="image/webp"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <source srcset="../images/project3-150.jpg 150w,
+                                           ../images/project3-300.jpg 300w,
+                                           ../images/project3-600.jpg 600w"
+                                    type="image/jpeg"
+                                    sizes="(max-width: 768px) 150px, 
+                                           (max-width: 1200px) 300px,
+                                           400px">
+                            
+                            <img class="project-preview-image" 
+                                 src="../images/project3-300.jpg"
+                                 width="300" 
+                                 height="200"
+                                 alt="Главная страница личного сайта"
+                                 loading="lazy">
+                        </picture>
                         <div class="project-content">
                             <h3 class="project-title">Портфолио</h3>
                             <span class="project-tech">Bootstrap</span>
@@ -103,7 +200,14 @@
                 <button class="close-btn" onclick="closeModal('modal1')">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="modal-image">💻</div>
+                <picture>
+                    <source srcset="/images/project1-details.webp" type="image/webp">
+                    <source srcset="/images/project1-details.jpg" type="image/jpeg">
+                    <img class="modal-image" 
+                         src="/images/project1-details.jpg"
+                         alt="Детали проекта Личный сайт"
+                         loading="eager">
+                </picture>
                 <p class="modal-description">
                     Полнофункциональный личный веб-сайт с адаптивным дизайном, созданный с использованием чистого HTML и CSS. 
                     Сайт включает в себя главную страницу, портфолио проектов, блог и контактную форму. 
@@ -123,7 +227,14 @@
                 <button class="close-btn" onclick="closeModal('modal2')">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="modal-image">✅</div>
+                <picture>
+                    <source srcset="/images/project2-detailed.webp" type="image/webp">
+                    <source srcset="/images/project2-detailed.jpg" type="image/jpeg">
+                    <img class="modal-image" 
+                         src="/images/project2-detailed.jpg"
+                         alt="Детали проекта Todo-приложение"
+                         loading="eager">
+                </picture>
                 <p class="modal-description">
                     Интерактивное приложение для управления задачами, разработанное на чистом JavaScript. 
                     Функциональность включает добавление, редактирование, удаление и отметку выполненных задач. 
@@ -144,7 +255,14 @@
                 <button class="close-btn" onclick="closeModal('modal3')">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="modal-image">🛒</div>
+                <picture>
+                    <source srcset="/images/project3-details.webp" type="image/webp">
+                    <source srcset="/images/project3-details.jpg" type="image/jpeg">
+                    <img class="modal-image" 
+                         src="/images/project3-details.jpg"
+                         alt="Детали проекта Личный сайт"
+                         loading="eager">
+                </picture>
                 <p class="modal-description">
                     Полнофункциональный интернет-магазин на React с использованием современных хуков и контекста для управления состоянием. 
                     Включает каталог товаров, корзину покупок, систему фильтрации и поиска, а также оформление заказов. 
@@ -164,7 +282,14 @@
                 <button class="close-btn" onclick="closeModal('modal4')">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="modal-image">🎨</div>
+                <picture>
+                    <source srcset="/images/project4-details.webp" type="image/webp">
+                    <source srcset="/images/project4-details.jpg" type="image/jpeg">
+                    <img class="modal-image" 
+                         src="/images/project4-details.jpg"
+                         alt="Детали проекта Личный сайт"
+                         loading="eager">
+                </picture>
                 <p class="modal-description">
                     Адаптивное портфолио, созданное с использованием Bootstrap 5. Сайт полностью responsive и корректно отображается 
                     на всех типах устройств. Включает галерею проектов, интерактивные элементы и современные UI-компоненты. 
@@ -176,7 +301,7 @@
             </div>
         </div>
     </div>
-    <script src="../scripts/projects-sctipt.js"></script>
+    <script src="../scripts/projects-script.js"></script>
 </body>
 </html>
 
