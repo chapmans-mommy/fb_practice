@@ -1566,19 +1566,30 @@ a, button, input, textarea {
     }
     
     .form-input, .form-textarea {
-      font-size: 16px; 
-      min-height: 44px; 
+        font-size: 16px; /* Предотвращает zoom на iOS */
+        min-height: 44px; /* Улучшает доступность */
+    }
+
+    .contact-form {
+        gap: 15px;
     }
   }
   
   .scalable-element {
     transform: scale(1);
     transition: transform 0.3s ease;
-  }
+}
   
   @media (max-width: 480px) {
     .scalable-element {
       transform: scale(0.95);
+    }
+    .project-card {
+        padding: 15px 10px;
+    }
+    
+    .section-title {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
     }
   }
 
@@ -1715,3 +1726,60 @@ a, button, input, textarea {
     }
 }
 
+/* Добавить в styles.css */
+.object-fit-demo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.object-fit-item {
+    text-align: center;
+}
+
+.object-fit-item img {
+    width: 100%;
+    height: 200px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+}
+
+.object-fit-cover { object-fit: cover; }
+.object-fit-contain { object-fit: contain; background: var(--bg-tertiary); }
+.object-fit-fill { object-fit: fill; }
+
+.responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+@media (max-width: 768px) {
+    .responsive-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media print {
+    .nav, .footer, .btn, .theme-switcher {
+        display: none !important;
+    }
+    
+    body {
+        color: #000 !important;
+        background: #fff !important;
+        font-size: 12pt;
+    }
+    
+    .container {
+        box-shadow: none !important;
+        max-width: 100% !important;
+    }
+    
+    img {
+        max-width: 100% !important;
+        filter: grayscale(100%);
+    }
+}
