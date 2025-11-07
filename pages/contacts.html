@@ -9,21 +9,21 @@
 <body>
     <a class="skip-link" href="#main">Перейти к основному содержимому</a>
     <div class="container">
-        <header class="header">
+        <header class="header" role="banner">
             <div class="logo">
                 <div class="logo-top">
-                    <img src="../images/logo.png" alt="LittleKitten" class="logo-image">
+                    <img src="../images/logo.png" alt="LittleKitten - логотип портфолио" class="logo-image">
                     <h1 class="logo-text">Lerochka</h1>
                 </div>
             </div>
             <div class="theme-switcher">
-                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
-                    <span class="theme-icon">🔆</span>
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить между светлой и темной темой">
+                    <span class="theme-icon" aria-hidden="true">🔆</span>
                 </button>
             </div>
         </header>
         
-        <nav class="nav">
+        <nav class="nav" role="navigation" aria-label="Основная навигация">
             <ul class="nav-list">
                 <li class="nav-item">
                     <a class="nav-link" href="../index.html">Главная</a>
@@ -35,45 +35,69 @@
                     <a class="nav-link" href="diary.html">Дневник</a>
                 </li>
                 <li class="nav-item nav-item--active">
-                    <a class="nav-link" href="contacts.html">Контакты</a>
+                    <a class="nav-link" href="contacts.html" aria-current="page">Контакты</a>
                 </li>
             </ul>
         </nav>
         
-        <main id="main">
+        <main id="main" role="main">
             <h1 class="page-title">Свяжитесь со мной</h1>
             
             <div class="contacts-container">
-                <section class="contact-form-section">
-                    <h2 class="section-title">Отправить сообщение</h2>
-                    <form class="contact-form" id="contactForm">
+                <section class="contact-form-section" aria-labelledby="contact-form-title">
+                    <h2 id="contact-form-title" class="section-title">Отправить сообщение</h2>
+                    <form class="contact-form" id="contactForm" novalidate>
                         <div class="form-group">
-                            <label for="name" class="form-label">Имя:</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
-                            <span class="error-message" id="nameError"></span>
+                            <label for="name" class="form-label">
+                                Имя:
+                                <span class="required-indicator" aria-hidden="true">*</span>
+                                <span id="name-help" class="help-text">Введите ваше полное имя</span>
+                            </label>
+                            <input type="text" id="name" name="name" class="form-input" 
+                                   required aria-required="true"
+                                   aria-describedby="name-help">
+                            <span class="error-message" id="nameError" role="alert" aria-live="polite"></span>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email" class="form-label">Email:</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                            <span class="error-message" id="emailError"></span>
+                            <label for="email" class="form-label">
+                                Email:
+                                <span class="required-indicator" aria-hidden="true">*</span>
+                                <span id="email-help" class="help-text">Введите действующий email адрес</span>
+                            </label>
+                            <input type="email" id="email" name="email" class="form-input" 
+                                   required aria-required="true"
+                                   aria-describedby="email-help">
+                            <span class="error-message" id="emailError" role="alert" aria-live="polite"></span>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message" class="form-label">Сообщение:</label>
-                            <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
-                            <span class="error-message" id="messageError"></span>
+                            <label for="message" class="form-label">
+                                Сообщение:
+                                <span class="required-indicator" aria-hidden="true">*</span>
+                                <span id="message-help" class="help-text">Опишите цель вашего обращения</span>
+                            </label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5" 
+                                      required aria-required="true"
+                                      aria-describedby="message-help message-length"></textarea>
+                            <span class="error-message" id="messageError" role="alert" aria-live="polite"></span>
+                            <div class="textarea-info">
+                                <span id="message-length" class="char-counter" aria-live="polite">0/500 символов</span>
+                            </div>
                         </div>
                         
-                        <button type="submit" class="submit-btn">Отправить сообщение</button>
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Отправить сообщение</span>
+                            <span class="btn-loading" aria-hidden="true">Отправка...</span>
+                        </button>
                     </form>
                 </section>
                 
-                <section class="contact-info-section">
-                    <h2 class="section-title">Мои контакты</h2>
+                <section class="contact-info-section" aria-labelledby="contact-info-title">
+                    <h2 id="contact-info-title" class="section-title">Мои контакты</h2>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <span class="contact-icon">📧</span>
+                            <span class="contact-icon" aria-hidden="true">📧</span>
                             <div class="contact-details">
                                 <strong>Email:</strong>
                                 <span>ivanova.v.d@edu.mirea.ru</span>
@@ -81,15 +105,15 @@
                         </div>
                         
                         <div class="contact-item">
-                            <span class="contact-icon">💻</span>
+                            <span class="contact-icon" aria-hidden="true">💻</span>
                             <div class="contact-details">
                                 <strong>GitHub:</strong>
-                                <span>https://github.com/chapmans-mommy</span>
+                                <a href="https://github.com/chapmans-mommy" class="contact-link">https://github.com/chapmans-mommy</a>
                             </div>
                         </div>
                         
                         <div class="contact-item">
-                            <span class="contact-icon">📍</span>
+                            <span class="contact-icon" aria-hidden="true">📍</span>
                             <div class="contact-details">
                                 <strong>Местоположение:</strong>
                                 <span>Город Москва</span>
@@ -101,29 +125,37 @@
                     <div class="social-links">
                         <h3 class="social-title">Я в социальных сетях</h3>
                         <div class="social-buttons">
-                            <a href="https://github.com/chapmans-mommy" class="social-btn github">GitHub</a>
-                            <a href="#" class="social-btn telegram">Telegram</a>
-                            <a href="https://vk.com/vlncent_van_gogh" class="social-btn vk">VK</a>
+                            <a href="https://github.com/chapmans-mommy" class="social-btn github" aria-label="Мой профиль на GitHub">
+                                GitHub
+                            </a>
+                            <a href="#" class="social-btn telegram" aria-label="Написать мне в Telegram">
+                                Telegram
+                            </a>
+                            <a href="https://vk.com/vlncent_van_gogh" class="social-btn vk" aria-label="Мой профиль ВКонтакте">
+                                VK
+                            </a>
                         </div>
                     </div>
                 </section>
             </div>
         </main>
         
-        <footer class="footer">
+        <footer class="footer" role="contentinfo">
             <p>© 2025 Контакты</p>
         </footer>
     </div>
 
-    <div id="successModal" class="modal">
+    <div id="successModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="success-modal-title" aria-describedby="success-modal-desc" hidden>
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Сообщение отправлено!</h2>
-                <button class="close-btn" onclick="contacts.closeModal('successModal')">&times;</button>
+                <h2 id="success-modal-title" class="modal-title">Сообщение отправлено!</h2>
+                <button class="close-btn" onclick="contacts.closeModal('successModal')" aria-label="Закрыть диалоговое окно">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
-                <div class="modal-icon">✅</div>
-                <p class="modal-description">
+                <div class="modal-icon" aria-hidden="true">✅</div>
+                <p id="success-modal-desc" class="modal-description">
                     Спасибо за ваше сообщение! Я свяжусь с вами в ближайшее время.
                 </p>
                 <button class="modal-btn" onclick="contacts.closeModal('successModal')">Хорошо</button>
