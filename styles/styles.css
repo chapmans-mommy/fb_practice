@@ -1076,8 +1076,9 @@ body {
 }
 
 .social-btn.telegram {
-    background: #0088cc;
+    background: #006699; /* Более темный синий */
     color: white;
+    border: 2px solid #006699;
 }
 
 .social-btn.vk {
@@ -1822,17 +1823,23 @@ a, button, input, textarea {
 
 .help-text {
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: var(--text-primary); /* Самый темный цвет */
     margin-top: 6px;
     display: block;
     font-family: inherit;
     line-height: 1.4;
+    opacity: 0.8;
 }
 
 .char-counter {
     font-size: 0.85rem;
-    color: var(--text-muted);
+    /* color: var(--text-primary) !important; */
+    color: var(--text-primary) !important;
+    margin-top: 6px;
+    display: block;
     font-family: inherit;
+    line-height: 1.4;
+    opacity: 0.8;
 }
 
 .textarea-info {
